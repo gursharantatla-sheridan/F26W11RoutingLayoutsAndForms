@@ -1,0 +1,29 @@
+﻿@page "/htmlform"
+@rendermode InteractiveServer
+
+<h3>Html Form Example</h3>
+
+Name <input type="text" @bind="name" /><br /><br />
+
+Price <input type="number" @bind="price" /><br /><br />
+
+<button @onclick="Save">Save</button>
+
+Name = @submittedName<br />
+Price = @submittedPrice.ToString("C")
+
+
+@code {
+    string? name;
+    double price;
+
+    string? submittedName;
+    double submittedPrice;
+
+    private void Save()
+    {
+        // to simulate data saving process
+        submittedName = name;
+        submittedPrice = price;
+    }
+}
