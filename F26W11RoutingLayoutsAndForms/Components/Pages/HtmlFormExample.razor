@@ -7,11 +7,13 @@ Name <input type="text" @bind="name" /><br /><br />
 
 Price <input type="number" @bind="price" /><br /><br />
 
-<button @onclick="Save">Save</button>
+<button @onclick="Save">Save</button><br /><br />
 
-Name = @submittedName<br />
-Price = @submittedPrice.ToString("C")
-
+@if (submittedName != null)
+{
+    <p>Name = @submittedName</p>
+    <p>Price = @submittedPrice.ToString("C")</p>
+}
 
 @code {
     string? name;
